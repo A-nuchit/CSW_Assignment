@@ -1,0 +1,22 @@
+{
+  "name": "public",
+  "authors": [
+    "ggolfko <5535512134@email.psu.ac.th>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-resource": "^1.6.4",
+    "angular-route": "^1.6.4"
+  }
+}

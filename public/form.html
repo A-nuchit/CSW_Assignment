@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html ng-app="starter">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+    	<style>
+	.modalDialog {
+		position: fixed;
+		font-family: Arial, Helvetica, sans-serif;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0,0,0,0.8);
+		z-index: 99999;
+		opacity:0;
+		-webkit-transition: opacity 400ms ease-in;
+		-moz-transition: opacity 400ms ease-in;
+		transition: opacity 400ms ease-in;
+		pointer-events: none;
+	}
+
+	.modalDialog:target {
+		opacity:1;
+		pointer-events: auto;
+	}
+
+	.modalDialog > div {
+		width: 400px;
+		position: relative;
+		margin: 10% auto;
+		padding: 5px 20px 13px 20px;
+		border-radius: 10px;
+		background: #fff;
+		background: -moz-linear-gradient(#fff, #999);
+		background: -webkit-linear-gradient(#fff, #999);
+		background: -o-linear-gradient(#fff, #999);
+	}
+
+	.close {
+		background: #606061;
+		color: #FFFFFF;
+		line-height: 25px;
+		position: absolute;
+		right: -12px;
+		text-align: center;
+		top: -10px;
+		width: 24px;
+		text-decoration: none;
+		font-weight: bold;
+		-webkit-border-radius: 12px;
+		-moz-border-radius: 12px;
+		border-radius: 12px;
+		-moz-box-shadow: 1px 1px 3px #000;
+		-webkit-box-shadow: 1px 1px 3px #000;
+		box-shadow: 1px 1px 3px #000;
+	}
+
+	.close:hover { background: #00d9ff; }
+	</style>
+  
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-route/angular-route.js"></script>
+  <script src="/bower_components/angular-resource/angular-resource.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="css/styles.css" rel="stylesheet">
+  
+
+</head>
+
+<body ng-controller="AppController">
+  <div class="container"><br>
+
+    <h1>Application form</h1>
+   
+	
+    <table class="table table-striped">
+      <thead>
+        <tr>
+		
+          <th><center>Firstname-Lastname</center></th>
+          <th><center>Age</center></th>
+          <th><center>Tel.</center></th>
+		  <th><center>Address</center></th>
+		  <th><center>E-mail</center></th>
+		
+          <th style="text-align: center"> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="project in projects track by $index" ng-if="!isEmpty(project)">
+          <td>{{project.stdid}}</td>
+          <td>{{project.name}}</td>
+          <td>{{project.score}}</td>
+          <td>{{project.adds}}</td>
+		  <td>{{project.email}}</td>
+		  <td style="text-align: center">
+            <!-- <button type="button" ng-click="get(project.id)" class="btn btn-info">get</button> -->
+            <button  type="button" ng-click="delete(project.id)" class="btn btn-danger">delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+	<center>
+	
+	</script>
+	<table>
+	<tr>
+     <div style="width:40%">
+        <h2>Your Information</h2>
+        <div class="input-group">
+        <label>Name</label>
+          <input type="text" class="form-control" id="basic-url" ng-model="addProject.stdid" ng-init="addProject.stdid=''">
+        </div>
+        <br><div class="input-group">
+        <label for="basic-url">Age</label>
+          <input type="text" class="form-control" id="basic-url" ng-model="addProject.name">
+        </div>
+        <br><div class="input-group">
+        <label for="basic-url">Tel.</label>
+          <input type="text" class="form-control" id="basic-url" ng-model="addProject.score">
+        </div>
+        <br>
+		<br><div class="input-group">
+        <label for="basic-url">Address</label>
+          <input type="text" class="form-control" id="basic-url" ng-model="addProject.adds">
+        </div>
+        <br>
+		<br><div class="input-group">
+        <label for="basic-url">E-mail</label>
+          <input type="text" class="form-control" id="basic-url" ng-model="addProject.email">
+        </div>
+        <br>
+		<div class="panel panel-default">
+		
+            <div class="progress">
+              <div class="progress-bar" role="progressbar"></div>
+            </div><h5>Upload your resume</h5>
+            <button class="btn btn-lg upload-btn" class="btn btn-primary"  type="button" ng-click="add()"  >Upload File & Confirm</button>
+        </div>
+
+        <br>
+		</div>
+ </tr>
+ </center>
+   
+        
+
+  <input id="upload-input" type="file" name="uploads[]" multiple="multiple"></br>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="javascripts/upload.js"></script>
+  <script src="js/app.js"></script>
+	
+</body>
+
+</html>
